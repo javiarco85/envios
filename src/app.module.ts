@@ -3,6 +3,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MercanciaModule } from './mercancia/mercancia.module';
+import { SenderModule } from './sender/sender.module';
+import { ReceiverModule } from './receiver/receiver.module';
+import { CustomerModule } from './customer/customer.module';
+import { ShipmentModule } from './shipment/shipment.module';
 
 @Module({
   imports: [
@@ -12,7 +16,11 @@ import { MercanciaModule } from './mercancia/mercancia.module';
       {
         useNewUrlParser: true
       }
-    )
+    ),
+    SenderModule,
+    ReceiverModule,
+    CustomerModule,
+    ShipmentModule
   ],
   controllers: [AppController],
   providers: [AppService],
